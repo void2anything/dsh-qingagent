@@ -4,6 +4,16 @@
 const RUNTIME_STYLE_ID = 'qingdoc-runtime-css'
 
 const RUNTIME_CSS = `
+/* 编辑锁 hover 提示显现(客户端 workspace-ink-skin.css:3443-3455 同款)。提取改写把
+   body:has(#view-workspace .ws-right:hover) 变成 :has(:is([data-qingagent-doc-panel],…) …),
+   而 :has() 参数带隐式 :scope 后代前缀,等于要求面板内部再嵌一个面板,永远失配 → hover 恒隐。
+   这里以面板自身为锚重写;qingdoc.css 里的失配版规则无害保留。 */
+[data-qingagent-doc-panel][data-tool="agentBusy"]:has(.ws-right:hover) > .ws-edit-lock .ws-edit-lock-hint,
+[data-qingagent-doc-panel][data-tool="imageProgress"]:has(.ws-right:hover) > .ws-edit-lock .ws-edit-lock-hint,
+[data-qingagent-doc-panel][data-patch-revealing="1"]:has(.ws-right:hover) > .ws-edit-lock .ws-edit-lock-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
 /* 审查启动弹窗 portal 到 body(躲开 dsh 布局的 transform 祖先,fixed 才相对视口);
    真源 overlay z-index:10000 压不过 dsh 输入框,这里提到面板浮层带(100550)。 */
 [data-qingagent-doc-panel] .ws-folder-modal-overlay.ws-launch-modal-overlay {

@@ -1123,6 +1123,15 @@ export function QingDocPanel(props: QingDocPanelProps) {
         ? 'empty'
         : 'editable'
 
+
+  // 编辑锁 hover 提示:客户端同款移植(WorkspaceOverlays.tsx:38-50 WorkspaceEditLockHint;
+  // 文案分支=useWorkspacePageController.tsx:1370-1377 editLockHint)。样式/显隐由提取的
+  // qingdoc.css .ws-edit-lock 段负责(忙态+.ws-right:hover 才浮现),此处只补节点与文案。
+  const editLockHint = pendingReview
+    ? (revealActive ? null : '请先确认或放弃当前修改候选')
+    : (busy || turnRunningEffective)
+      ? '请等待青简完成编辑后再做修改'
+      : null
   const docDimensions = useMemo<DocDimensions>(() => ({
     content: {
       kind: contentKind === 'editable'
@@ -1252,6 +1261,14 @@ export function QingDocPanel(props: QingDocPanelProps) {
         style={rootStyle}
         aria-label="青简文档"
       >
+      {editLockHint ? (
+        <div className="ws-edit-lock" aria-hidden="true" data-wf="WorkspaceEditLockHint">
+          <div className="ws-edit-lock-hint">
+            <span className="ws-edit-lock-hint-dot" aria-hidden="true" />
+            {editLockHint}
+          </div>
+        </div>
+      ) : null}
       <div
         className="qingdoc-details-resizer"
         data-qing-details-resizer

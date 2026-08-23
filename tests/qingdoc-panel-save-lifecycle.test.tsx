@@ -288,6 +288,32 @@ describe('QingDocPanel 保存生命周期', () => {
     expect(document.querySelector('.ws-paper-surface > .ws-editor-glow')).not.toBeNull()
   })
 
+  it('忙态渲染编辑锁 hover 提示节点(客户端 WorkspaceEditLockHint 同款),文案同源', async () => {
+    installBridgeFetch('dsh-editlock-busy', ['qing-editlock-busy'], {
+      agentBusy: true,
+      panelPm: EDITED_PM,
+    })
+    renderPanel('dsh-editlock-busy')
+
+    const hint = await vi.waitFor(() => {
+      const node = document.querySelector<HTMLElement>('[data-qingagent-doc-panel] > .ws-edit-lock .ws-edit-lock-hint')
+      expect(node).not.toBeNull()
+      return node!
+    })
+    expect(hint.textContent).toContain('请等待青简完成编辑后再做修改')
+    expect(hint.querySelector('.ws-edit-lock-hint-dot')).not.toBeNull()
+  })
+
+  it('闲态不渲染编辑锁提示节点', async () => {
+    installBridgeFetch('dsh-editlock-idle', ['qing-editlock-idle'], { panelPm: EDITED_PM })
+    renderPanel('dsh-editlock-idle')
+
+    await vi.waitFor(() => expect(
+      document.querySelector('[data-qingagent-doc-panel]')?.getAttribute('data-tool'),
+    ).toBe('none'))
+    expect(document.querySelector('.ws-edit-lock')).toBeNull()
+  })
+
   it('reveal 请求遇到面板文档短暂缺失时立即清理，恢复后不滞留写作中', async () => {
     vi.stubGlobal('EventSource', FakeEventSource)
     const restorePanel = deferred<void>()

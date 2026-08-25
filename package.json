@@ -2,6 +2,18 @@
   "name": "dsh-qingagent",
   "version": "0.1.46",
   "description": "DeepSeek Harness × 青简写作桥：QingML 起草工具与右侧宣纸预览。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "ai-writing",
+    "writing-assistant",
+    "qingml",
+    "qingagent",
+    "docs",
+    "markdown"
+  ],
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",

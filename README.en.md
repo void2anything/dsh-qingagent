@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" alt="QingAgent 青简" width="112">
+<img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/logo.svg" alt="QingAgent 青简" width="112">
 
 # dsh-qingagent
 
@@ -13,7 +13,7 @@ A plugin built to the DSH spec: one command to install or remove, and you can wr
 
 [QingAgent repo](https://github.com/void2anything/qingagent) · [qingagent.com](https://qingagent.com) · [Feature board](https://qingagent.com/feedback/plugin) · [中文](./README.md)
 
-<img src="docs/assets/dsh-demo.gif" alt="Drafting in DSH with the paper panel filling in on the right" width="880">
+<img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-demo.gif" alt="Drafting in DSH with the paper panel filling in on the right" width="880">
 
 </div>
 
@@ -41,9 +41,9 @@ Describe what you want in the conversation, and the agent drafts, edits and subm
 
 | | |
 |---|---|
-| <img src="docs/assets/dsh-diagram.webp" alt="A Mermaid flowchart in the paper panel next to the DSH conversation"> | <img src="docs/assets/dsh-table-math.webp" alt="Tables with inline and block formulas"> |
+| <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-diagram.webp" alt="A Mermaid flowchart in the paper panel next to the DSH conversation"> | <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-table-math.webp" alt="Tables with inline and block formulas"> |
 | **Chat on the left, manuscript on the right** — state the requirement once and the agent writes through the QingAgent engine while the paper panel fills in; Mermaid diagrams carry "visual edit / edit Mermaid" buttons and drawio drawings open on double-click | **Full typesetting** — tables, inline and block math (KaTeX), task lists and code blocks, rendered exactly as in the QingAgent desktop app |
-| <img src="docs/assets/dsh-review.webp" alt="Per-change verdicts in review mode"> | <img src="docs/assets/dsh-onboarding.webp" alt="Onboarding card when QingAgent is not connected"> |
+| <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-review.webp" alt="Per-change verdicts in review mode"> | <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-onboarding.webp" alt="Onboarding card when QingAgent is not connected"> |
 | **Per-change verdicts** — the header shows "reviewing · N changes", additions and deletions are marked in the text, and the bottom bar offers previous / next / commit / discard all | **Three-state onboarding** — not installed, installed but not running, or handshake failed, each with the right guidance; once QingAgent is up the plugin recovers without restarting DSH |
 
 ---
@@ -218,7 +218,7 @@ Contract tests lock down: the 800px page width, serif type, square corners and w
 Scan to join the WeChat user group — report problems, request features, follow updates:
 
 <!-- TODO: WeChat group QR code pending -->
-<!-- <img src="docs/assets/wechat-group.png" alt="QingAgent user group" width="220"> -->
+<!-- <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/wechat-group.png" alt="QingAgent user group" width="220"> -->
 
 ---
 

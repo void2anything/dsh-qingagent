@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/logo.svg" alt="青简 QingAgent" width="112">
+<img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/logo.svg" alt="青简 QingAgent" width="112">
 
 # dsh-qingagent
 
@@ -13,7 +13,7 @@
 
 [青简主仓](https://github.com/void2anything/qingagent) · [官网 qingagent.com](https://qingagent.com) · [需求广场](https://qingagent.com/feedback/plugin) · [English](./README.en.md)
 
-<img src="docs/assets/dsh-demo.gif" alt="在 DSH 里一句话起草，右侧宣纸面板同步成文" width="880">
+<img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-demo.gif" alt="在 DSH 里一句话起草，右侧宣纸面板同步成文" width="880">
 
 </div>
 
@@ -41,9 +41,9 @@ DeepSeek Harness（DSH）是 DeepSeek 开源的「一切皆插件」Agent 框架
 
 | | |
 |---|---|
-| <img src="docs/assets/dsh-diagram.webp" alt="DSH 对话与宣纸面板里的 Mermaid 流程图"> | <img src="docs/assets/dsh-table-math.webp" alt="表格与行内、块级公式"> |
+| <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-diagram.webp" alt="DSH 对话与宣纸面板里的 Mermaid 流程图"> | <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-table-math.webp" alt="表格与行内、块级公式"> |
 | **左边聊，右边成稿**——一句话交代要求，Agent 调用青简工具落库，右侧宣纸面板同步长出正文；Mermaid 流程图带「可视化编辑 / 编辑 Mermaid」按钮，drawio 工程图双击即开 | **完整排版能力**——表格、行内公式与块级公式（KaTeX）、任务清单、代码块，与青简桌面端同一套渲染 |
-| <img src="docs/assets/dsh-review.webp" alt="审阅态逐条裁决"> | <img src="docs/assets/dsh-onboarding.webp" alt="未连接青简时的引导卡"> |
+| <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-review.webp" alt="审阅态逐条裁决"> | <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/dsh-onboarding.webp" alt="未连接青简时的引导卡"> |
 | **审阅态逐条裁决**——顶栏显示「审阅中 · N 处」，正文标出增删，底部工具条上一处 / 下一处 / 提交 / 放弃全部 | **三态引导卡**——未装、已装未启动、握手失败各给对应指引；青简起来后自动恢复，不用重启 DSH |
 
 ---
@@ -250,7 +250,7 @@ npm test        # 仅单测
 扫码加入用户微信群，反馈问题、提需求、看更新：
 
 <!-- TODO: 微信群二维码待补 -->
-<!-- <img src="docs/assets/wechat-group.png" alt="青简用户交流群" width="220"> -->
+<!-- <img src="https://raw.githubusercontent.com/void2anything/dsh-qingagent/main/docs/assets/wechat-group.png" alt="青简用户交流群" width="220"> -->
 
 ---
 

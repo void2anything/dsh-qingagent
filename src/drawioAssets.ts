@@ -1,3 +1,4 @@
+import { existsSync } from 'node:fs'
 import { readFile, stat } from 'node:fs/promises'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { extname, isAbsolute, relative, resolve } from 'node:path'
@@ -8,14 +9,19 @@ export const DRAWIO_ROUTE_PATH = '/drawio'
 /**
  * 青简产品仓已经把 draw.io v31.0.2 裁成离线、同源运行时；插件只通过宿主桥只读发布，
  * 不再引入第二份 vendor，也不会回退到 embed.diagrams.net。
- * 资产位置:QING_ROOT(或 QINGAGENT_DRAWIO_ROOT 直指资产目录)可覆盖,
- * 默认取 vendor/qingagent submodule(相对本模块 lib/ 上一级)。
+ * 资产位置解析链:QINGAGENT_DRAWIO_ROOT/QING_ROOT 显式覆盖 → vendor/qingagent
+ * submodule(开发布局)→ lib/drawio(构建时随包拷贝,npm/github 安装的唯一来源——
+ * 二者的 tarball 都不含 submodule 内容,曾因此线上 404 卡「离线编辑器加载中」)。
  */
-export const DEFAULT_DRAWIO_VENDOR_ROOT =
-  process.env.QINGAGENT_DRAWIO_ROOT
-  ?? (process.env.QING_ROOT
-    ? resolve(process.env.QING_ROOT, 'apps/web/public/drawio')
-    : fileURLToPath(new URL('../vendor/qingagent/apps/web/public/drawio', import.meta.url)))
+function resolveDefaultDrawioRoot(): string {
+  if (process.env.QINGAGENT_DRAWIO_ROOT) return process.env.QINGAGENT_DRAWIO_ROOT
+  if (process.env.QING_ROOT) return resolve(process.env.QING_ROOT, 'apps/web/public/drawio')
+  const vendorRoot = fileURLToPath(new URL('../vendor/qingagent/apps/web/public/drawio', import.meta.url))
+  if (existsSync(vendorRoot)) return vendorRoot
+  return fileURLToPath(new URL('./drawio', import.meta.url))
+}
+
+export const DEFAULT_DRAWIO_VENDOR_ROOT = resolveDefaultDrawioRoot()
 
 export const DRAWIO_DOCUMENT_CSP = [
   "default-src 'self'",

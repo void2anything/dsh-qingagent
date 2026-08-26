@@ -1,7 +1,7 @@
 {
   "name": "dsh-qingagent",
-  "version": "0.1.46",
-  "description": "DeepSeek Harness × 青简写作桥：QingML 起草工具与右侧宣纸预览。",
+  "version": "0.1.47",
+  "description": "AI writing assistant plugin for DeepSeek Harness — draft and revise documents in chat, typeset on a rice-paper panel, review every edit before it lands. DeepSeek Harness × 青简写作桥：对话里起草改稿，右侧宣纸预览逐条审阅后落稿。",
   "keywords": [
     "dsh",
     "dsh-plugin",

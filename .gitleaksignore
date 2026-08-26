@@ -1,0 +1,20 @@
+# drawio 离线编辑器 vendored bundle（lib/drawio/）里的 gitleaks 误报。
+# 这些命中全部位于 jgraph/drawio 官方压缩产物内部，非本仓密钥。
+# 双写两种指纹：dshmk.com（api.dshmk.com）的扫描容器以 /workspace/ 为根，
+# 本地扫描无前缀——两边都认。
+/workspace/lib/drawio/js/extensions.min.js:generic-api-key:343
+/workspace/lib/drawio/js/app.min.js:dropbox-api-token:51
+/workspace/lib/drawio/js/app.min.js:generic-api-key:11371
+/workspace/lib/drawio/js/app.min.js:generic-api-key:11372
+/workspace/lib/drawio/js/app.min.js:generic-api-key:11373
+/workspace/lib/drawio/js/app.min.js:generic-api-key:11428
+/workspace/lib/drawio/js/app.min.js:generic-api-key:11429
+/workspace/lib/drawio/js/app.min.js:generic-api-key:15092
+lib/drawio/js/extensions.min.js:generic-api-key:343
+lib/drawio/js/app.min.js:dropbox-api-token:51
+lib/drawio/js/app.min.js:generic-api-key:11371
+lib/drawio/js/app.min.js:generic-api-key:11372
+lib/drawio/js/app.min.js:generic-api-key:11373
+lib/drawio/js/app.min.js:generic-api-key:11428
+lib/drawio/js/app.min.js:generic-api-key:11429
+lib/drawio/js/app.min.js:generic-api-key:15092
